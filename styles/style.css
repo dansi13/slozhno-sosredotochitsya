@@ -2,4 +2,100 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: IBM Plex Mono;
+  background: var(--background-image) top center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 18px;
+
 }
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  max-height: 668px;
+
+}
+
+.decorated-zone::before {
+  content: "REC";
+  color: var(--accent-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  width: 9px;
+  height: 9px; 
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  list-style-type: none;
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  background: none;
+  font-family: inherit;
+  color: var(--accent-color);
+  font-size: inherit;
+  border: 1px solid;
+  padding: 0px, 13px, 0px, 13px;
+}
+
+.header__theme-menu-button_type_light {
+
+}
+
+.header__theme-menu-button_active {
+
+}
+
+.header__theme-menu-button_type_auto {
+
+}
+
+.header__theme-menu-button_type_dark {
+
+}
+
+.header__title {
+  font-size: 116px;
+  color: var(--text-title-color);
+  text-shadow: 4px 4px 0px var(--accent-color);
+  line-height: 95.7px;
+
+}
+
+.header__text {
+  background-color: var(--accent-color);
+  color: var(--text-conteiner);
+  font-weight: 700;
+  line-height: 23.4px;
+  max-width: 355px;
+  min-height: 117px;
+  width: 100%;
+}
+
