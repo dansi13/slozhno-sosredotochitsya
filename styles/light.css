@@ -4,7 +4,6 @@
   переключая тему
 */
 :root.theme-light {
-  /* Переменные светлой темы */ 
   --accent-color: rgba(255, 141, 203, 1);
   --text-title-color:rgba(255, 194, 230, 1);
   --text-shadow: var(--accent-color);
@@ -23,7 +22,6 @@
 
 @media (prefers-color-scheme: light) {
 :root {
-      /* Дублируем переменные светлой темы */ 
       --accent-color: rgba(255, 141, 203, 1);
       --text-title-color:rgba(255, 194, 230, 1);
       --text-shadow: var(--accent-color);

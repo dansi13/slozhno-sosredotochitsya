@@ -1,7 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: IBM Plex Mono;
   background: var(--background-image) no-repeat top center, var(--background-color);
   background-size: auto 768px;
@@ -87,7 +86,7 @@
   background-color: var(--decor-color);
   box-shadow: 0 0 4px 2px var(--decor-color);
   width: 9px;
-  height: 9px; 
+  height: 9px;
 }
 
 @media (width >= 768px) {
@@ -138,7 +137,6 @@
   font-family: inherit;
   font-size: inherit;
   color: var(--menu-button);
-  font-size: inherit;
   border: none;
   padding: 0px 13px;
   min-width: 70px;
@@ -146,24 +144,20 @@
   cursor: pointer;
 }
 
-/* .header__theme-menu-button:hover {
+.header__theme-menu-button:hover {
   border: var(--hover-color);
 }
 
 .header__theme-menu-button:focus {
-  border: none;
-}
-
-.header__theme-menu-button:focus-visible {
   border-bottom: 1px solid var(--menu-button);
-} */
-
-.header__theme-menu-button_type_light {
-
 }
 
 .header__theme-menu-button_active {
   border: 1px solid;
+}
+
+/* .header__theme-menu-button_type_light {
+
 }
 
 .header__theme-menu-button_type_auto {
@@ -172,7 +166,7 @@
 
 .header__theme-menu-button_type_dark {
 
-}
+} */
 
 .header__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -180,7 +174,8 @@
   text-shadow: 4px 4px 0px var(--text-shadow);
   line-height: 95.7px;
   margin: 0;
-  margin-bottom: 10px;justify-self: start;
+  margin-bottom: 10px;
+  justify-self: start;
 }
 
 @media (width >=1024px) {
@@ -340,17 +335,13 @@
   color: inherit
 }
 
-/* .section__article-text-link:hover {
+.section__article-text-link:hover {
   border-bottom: 1px solid var(--text-main-color);
 }
 
 .section__article-text-link:focus {
-  outline: none;
-}
-
-.section__article-text-link:focus-visible {
   outline: 1px solid var(--text-main-color);
-} */
+}
 
 .subtitle-decor {
   background-color: var(--text-box);
