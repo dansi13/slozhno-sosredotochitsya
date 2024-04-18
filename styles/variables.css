@@ -4,10 +4,16 @@
 */
 :root {
   --accent-color: rgba(255, 0, 112, 1);
-  --text-main-color:rgba(241, 178, 206, 1);
   --text-title-color:rgba(219, 0, 255, 1);
-  --text-conteiner:rgba(0, 0, 40, 1);
+  --text-shadow: var(--accent-color);
+  --text-main-color:rgba(241, 178, 206, 1);
+  --text-color:rgba(0, 0, 40, 1);
+  --text-box: var(--accent-color);
+  --section-title: var(--accent-color);
   --hover-color: 1px solid rgba(50, 49, 45, 0.4);
   --background-image: url(../images/cover-image-dark.png);
   --background-color: #000028;
+  --decorated-zone: var(--accent-color);
+  --decor-color: var(--accent-color);
+  --menu-button: var(--accent-color);
 }

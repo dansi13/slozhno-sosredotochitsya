@@ -3,7 +3,9 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: IBM Plex Mono;
-  background-color: var(--background-color);
+  background: var(--background-image) no-repeat top center, var(--background-color);
+  background-size: auto 768px;
+  background-attachment: fixed;
   font-size: 18px;
 }
 
@@ -13,12 +15,11 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  /* если все сломалось проблема тут ниже */
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
   min-height: 668px;
-  background: var(--background-image) top center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 @media (width >= 768px) and (width < 1024px) {
@@ -27,6 +28,13 @@
     padding: 0 10px 0 0;
   }
 }
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+  }
+}
+
 .decorated-zone::before {
   content: "";
   position: absolute;
@@ -34,8 +42,8 @@
   right: 2px;
   width: 25.04px;
   height: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decorated-zone);
+  border-right: 1px solid var(--decorated-zone);
 }
 
 .decorated-zone::after {
@@ -45,11 +53,11 @@
   left: 2px;
   width: 25.04px;
   height: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decorated-zone);
+  border-left: 1px solid var(--decorated-zone);
 }
 
-@media (width >= 768px) and (width < 1024px) {
+@media (width >= 768px) {
   .decorated-zone::before {
     top: 12px;
     right: 11px;
@@ -62,7 +70,7 @@
 }
 
 .header__decor-title {
-  color: var(--accent-color);
+  color: var(--decor-color);
   position: absolute;
   top: 3px;
   right: 30px;
@@ -76,13 +84,13 @@
   top: 10px;
   right: 11px;
   border-radius: 100%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--decor-color);
+  box-shadow: 0 0 4px 2px var(--decor-color);
   width: 9px;
   height: 9px; 
 }
 
-@media (width >= 768px) and (width < 1024px) {
+@media (width >= 768px) {
   .header__decor-title {
     top: 13px;
     right: 40px;
@@ -106,6 +114,17 @@
   margin: 0;
 }
 
+@media (width >=1024px) {
+  .header__theme-menu-list {
+    display: flex;
+    justify-content: center;
+    top: 9px;
+    left: 390px;
+    position: absolute;
+    padding: 0;
+  }
+}
+
 .header__theme-menu-item {
   list-style-type: none;
 }
@@ -118,7 +137,7 @@
   background: none;
   font-family: inherit;
   font-size: inherit;
-  color: var(--accent-color);
+  color: var(--menu-button);
   font-size: inherit;
   border: none;
   padding: 0px 13px;
@@ -136,7 +155,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--menu-button);
 } */
 
 .header__theme-menu-button_type_light {
@@ -156,17 +175,23 @@
 }
 
 .header__title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: var(--text-title-color);
-  text-shadow: 4px 4px 0px var(--accent-color);
+  text-shadow: 4px 4px 0px var(--text-shadow);
   line-height: 95.7px;
   margin: 0;
   margin-bottom: 10px;justify-self: start;
 }
 
+@media (width >=1024px) {
+  .header__title {
+    margin: 0 0 15px 0;
+  }
+}
+
 .title-decor {
-  background-color: var(--accent-color);
-  color: var(--text-conteiner);
+  background-color: var(--text-box);
+  color: var(--text-color);
   font-weight: 700;
   font-size: inherit;
   line-height: 23.4px;
@@ -174,15 +199,15 @@
   height: fit-content;
 }
 
-@media (width >= 768px) and (width < 1024px) {
+.header__title-decor {
+  margin: 10px 0 40px 0;
+}
+
+@media (width >= 768px) {
   .header__title-decor {
     justify-self: end;
     width: 49%;
   }
-}
-
-.header__title-decor {
-  margin: 10px 0 40px 0;
 }
 
 /* main */
@@ -227,6 +252,27 @@
   }
 }
 
+@media (width >= 1024px) {
+  .content__section:first-child {
+    grid-template-columns: 1fr 2fr;
+    justify-self: center;
+    width: 98%;
+    margin-top: 30px;
+  }
+
+  .content__section:nth-child(2) {
+    width: 97%;
+    margin: 40px 0 0 12px;
+  }
+
+  .content__section:nth-child(3) {
+    grid-template-columns: 1fr 2fr;
+    justify-self: center;
+    width: 96%;
+    margin-top: 65px;
+  }
+}
+
 .content {
   display: grid;
 }
@@ -237,11 +283,23 @@
   }
 }
 
+@media (width >= 1024px) {
+  .content__section:nth-child(2) .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    min-width: 100%;
+    margin-top: 17px;
+    margin-left: 5px;
+    gap: 19px;
+  }
+}
+
 .section__title {
   font-family: inherit;
   font-size: inherit;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--section-title);
   line-height: 23.4px;
 }
 
@@ -249,6 +307,13 @@
   .section__title {
     margin-top: 0;
     max-width: 236px;
+  }
+}
+
+@media (width >= 1024px) {
+  .section__title {
+    margin: 0;
+    max-width: 315px;
   }
 }
 
@@ -263,6 +328,7 @@
   font-weight: 400;
   line-height: 23.4px;
   font-family: inherit;
+  color: var(--text-main-color);
 }
 
 .section__article-text-link {
@@ -287,8 +353,8 @@
 } */
 
 .subtitle-decor {
-  background-color: var(--accent-color);
-  color: var(--text-conteiner);
+  background-color: var(--text-box);
+  color: var(--text-color);
   font-weight: 400;
   font-size: inherit;
   line-height: 23.4px;
@@ -314,9 +380,9 @@
   margin-bottom: 0;
 }
 
-@media (width >= 768px) and (width < 1024px) {
+@media (width >= 768px) {
   .content__section-img {
-    width: 96%;
+    width: 97%;
     margin: 25px 0 0 15px;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 19px;
@@ -330,7 +396,7 @@
   height: 100%;
 }
 
-@media (width >= 768px) and (width < 1024px) {
+@media (width >= 768px) {
   .content__section-img .section__img:first-of-type {
     grid-column: span 2;
   }
@@ -362,11 +428,19 @@
   }
 }
 
+@media (width >= 1024px) {
+  .footer {
+    min-height: 768px;
+    margin-top: 75px;
+  }
+}
+
 .footer__title {
   color: var(--text-title-color);
+  text-shadow: 2px 2px 0px var(--text-shadow);
   font-weight: 700;
   font-family: inherit;
-  font-size: 116px;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 95.7px;
   margin: 0;
   height: min-content;
@@ -379,5 +453,12 @@
   .footer__title {
     top: 463px;
     left: 204px;
+  }
+}
+
+@media (width >=1024px) {
+  .footer__title {
+    top: 327px;
+    left: 273px;
   }
 }

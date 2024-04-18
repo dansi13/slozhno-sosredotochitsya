@@ -4,14 +4,38 @@
   переключая тему
 */
 :root.theme-light {
-  /* Переменные светлой темы */    
+  /* Переменные светлой темы */ 
+  --accent-color: rgba(255, 141, 203, 1);
+  --text-title-color:rgba(255, 194, 230, 1);
+  --text-shadow: var(--accent-color);
+  --text-main-color:rgba(53, 52, 48, 1);
+  --text-color: var(--text-main-color);
+  --text-box: var(--accent-color);
+  --section-title: var(--text-main-color);
+  --hover-color: 1px solid rgba(50, 49, 45, 0.4);
+  --background-image: url(../images/cover-image-light.png);
+  --background-color: #fff1f7;
+  --decorated-zone: var(--text-main-color);
+  --menu-button: var(--text-main-color);
 }
 
 /* Остальные стили */
 
 @media (prefers-color-scheme: light) {
 :root {
-      /* Дублируем переменные светлой темы */    
+      /* Дублируем переменные светлой темы */ 
+      --accent-color: rgba(255, 141, 203, 1);
+      --text-title-color:rgba(255, 194, 230, 1);
+      --text-shadow: var(--accent-color);
+      --text-main-color:rgba(53, 52, 48, 1);
+      --text-color: var(--text-main-color);
+      --text-box: var(--accent-color);
+      --section-title: var(--text-main-color);
+      --hover-color: 1px solid rgba(50, 49, 45, 0.4);
+      --background-image: url(../images/cover-image-light.png);
+      --background-color: #fff1f7;
+      --decorated-zone: var(--text-main-color);
+      --menu-button: var(--text-main-color);
   }
 }
 
@@ -21,4 +45,16 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --accent-color: rgba(255, 141, 203, 1);
+  --text-title-color:rgba(255, 194, 230, 1);
+  --text-shadow: var(--accent-color);
+  --text-main-color:rgba(53, 52, 48, 1);
+  --text-color: var(--text-main-color);
+  --text-box: var(--accent-color);
+  --section-title: var(--text-main-color);
+  --hover-color: 1px solid rgba(50, 49, 45, 0.4);
+  --background-image: url(../images/cover-image-light.png);
+  --background-color: #fff1f7;
+  --decorated-zone: var(--text-main-color);
+  --menu-button: var(--text-main-color);
 }
