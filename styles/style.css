@@ -146,7 +146,7 @@
 
   .header__theme-menu-item:last-child {
     margin-bottom: 0;
-  }  
+  }
 }
 
 .header__theme-menu-button {
@@ -177,18 +177,6 @@
 .header__theme-menu-button_active {
   border: 1px solid;
 }
-
-/* .header__theme-menu-button_type_light {
-
-}
-
-.header__theme-menu-button_type_auto {
-
-}
-
-.header__theme-menu-button_type_dark {
-
-} */
 
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
