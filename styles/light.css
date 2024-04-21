@@ -13,6 +13,10 @@
       --decorated-zone: var(--text-main-color);
       --menu-button: var(--text-main-color);
   }
+  
+  .header__decor-title {
+    display: none;
+  }
 }
 
 /* Остальные стили */
@@ -32,5 +36,5 @@
 }
 
 .page.theme_light .header__decor-title {
-  visibility: hidden;
+  display: none;
 }

@@ -17,3 +17,7 @@
   --decor-color: var(--accent-color);
   --menu-button: var(--accent-color);
 }
+
+.page.theme_dark .header__decor-title {
+  display: block;
+}
